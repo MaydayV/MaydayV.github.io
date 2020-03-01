@@ -9622,3 +9622,8 @@ photos .photo:last-child {
   font-size: 13px;
   margin-left: 10px;
 }
+
+      body {
+        background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);;
+      }
+    
