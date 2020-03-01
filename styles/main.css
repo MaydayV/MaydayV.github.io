@@ -9624,6 +9624,6 @@ photos .photo:last-child {
 }
 
       body {
-        background-color: #21D4FD; background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);;
+        background: fixed linear-gradient(to right bottom, , #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);;
       }
     
