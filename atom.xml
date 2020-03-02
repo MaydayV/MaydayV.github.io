@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MaydayV.github.io</id>
     <title>阿凯的生活记录</title>
-    <updated>2020-03-02T17:23:03.329Z</updated>
+    <updated>2020-03-02T17:23:23.059Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MaydayV.github.io"/>
     <link rel="self" href="https://MaydayV.github.io/atom.xml"/>
-    <subtitle>日拱一卒，热爱生活！</subtitle>
+    <subtitle>日拱一卒，对生活充满热爱！</subtitle>
     <logo>https://MaydayV.github.io/images/avatar.png</logo>
     <icon>https://MaydayV.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 阿凯的生活记录</rights>
