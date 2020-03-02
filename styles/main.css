@@ -2907,7 +2907,7 @@ form.search-form .submit:hover {
 .widget_epcl_related_articles .item {
   margin-bottom: 20px;
   position: relative;
-  padding-left: 100px;
+  padding-left: 0px;
   min-height: 80px;
 }
 .widget_epcl_posts_thumbs .item.no-thumb,
