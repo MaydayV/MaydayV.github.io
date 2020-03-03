@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://MaydayV.github.io</id>
+    <id>https://blog.caodan.io</id>
     <title>阿凯的生活记录</title>
-    <updated>2020-03-03T05:26:51.174Z</updated>
+    <updated>2020-03-03T05:30:49.507Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://MaydayV.github.io"/>
-    <link rel="self" href="https://MaydayV.github.io/atom.xml"/>
+    <link rel="alternate" href="https://blog.caodan.io"/>
+    <link rel="self" href="https://blog.caodan.io/atom.xml"/>
     <subtitle>日拱一卒，对生活充满热爱！</subtitle>
-    <logo>https://MaydayV.github.io/images/avatar.png</logo>
-    <icon>https://MaydayV.github.io/favicon.ico</icon>
+    <logo>https://blog.caodan.io/images/avatar.png</logo>
+    <icon>https://blog.caodan.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 阿凯的生活记录</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://MaydayV.github.io/hello-gridea/</id>
-        <link href="https://MaydayV.github.io/hello-gridea/">
+        <id>https://blog.caodan.io/hello-gridea/</id>
+        <link href="https://blog.caodan.io/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>✍️  <strong>Gridea</strong> 一个静态博客写作客户端。用它来记录生活、心情、知识、笔记、创意...</p>
