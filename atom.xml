@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.caodan.io</id>
     <title>阿凯的生活记录</title>
-    <updated>2020-03-13T07:10:27.976Z</updated>
+    <updated>2020-03-13T07:15:00.774Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.caodan.io"/>
     <link rel="self" href="https://blog.caodan.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, 阿凯的生活记录</rights>
     <entry>
         <title type="html"><![CDATA[webhook实时拉取Github仓库]]></title>
-        <id>https://blog.caodan.io/74i-BY-p_/</id>
-        <link href="https://blog.caodan.io/74i-BY-p_/">
+        <id>https://blog.caodan.io/webhook-github/</id>
+        <link href="https://blog.caodan.io/webhook-github/">
         </link>
         <updated>2020-03-13T06:51:42.000Z</updated>
         <summary type="html"><![CDATA[<p>由于Github的特殊原因，国内访问速度不太稳定，静态博客放在Github上，总觉得延迟有点严重。</p>
