@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.caodan.io</id>
     <title>阿凯的生活记录</title>
-    <updated>2020-03-13T07:08:38.733Z</updated>
+    <updated>2020-03-13T07:10:27.976Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.caodan.io"/>
     <link rel="self" href="https://blog.caodan.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://blog.caodan.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 阿凯的生活记录</rights>
     <entry>
-        <title type="html"><![CDATA[宝塔webhook实时拉取Github仓库]]></title>
+        <title type="html"><![CDATA[webhook实时拉取Github仓库]]></title>
         <id>https://blog.caodan.io/74i-BY-p_/</id>
         <link href="https://blog.caodan.io/74i-BY-p_/">
         </link>
