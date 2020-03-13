@@ -15,10 +15,10 @@
 <script src="https://blog.caodan.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://blog.caodan.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="由于Github的特殊原因，国内访问速度不太稳定，静态博客放在Github上，总觉得延迟有点严重。
+    <meta name="description" content="博客域名没有备案，而自己有香港的服务器，可以用来同步Github仓库的静态文件。
 
-但是域名没有备案，而自己有香港的服务器，可以用来同步Github仓库的静态文件。
-这样就可以让Gridea的博客内容，同步到Github后..." />
+这样就可以让Gridea的博客内容，同步到Github后，再被宝塔面板的webhook拉取到本地目录。
+域名国外解析到Github，国内解析到自己的服务器，..." />
     <meta name="keywords" content="分享" />
     <script src="https://blog.caodan.io/media/js/waterfall.min.js"></script>
     <script src="https://blog.caodan.io/media/js/prism.min.js"></script>
@@ -80,7 +80,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1584083694286" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1584083894168" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="输入关键词搜索" aria-label="输入关键词搜索" required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -95,7 +95,7 @@
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.png');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-03-13"><i class="fa fa-calendar"></i><span class="lately">23 分钟前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-03-13"><i class="fa fa-calendar"></i><span class="lately">27 分钟前</span></time>
               
               <a href="https://blog.caodan.io/webhook-github/#comments" class="comments meta-info" title="">
                 <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/webhook-github/"> </span>
@@ -119,12 +119,11 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>由于Github的特殊原因，国内访问速度不太稳定，静态博客放在Github上，总觉得延迟有点严重。</p>
+                  <p>博客域名没有备案，而自己有香港的服务器，可以用来同步Github仓库的静态文件。</p>
 <!-- more -->
-<p>但是域名没有备案，而自己有香港的服务器，可以用来同步Github仓库的静态文件。</p>
 <p>这样就可以让Gridea的博客内容，同步到Github后，再被宝塔面板的webhook拉取到本地目录。<br>
 域名国外解析到Github，国内解析到自己的服务器，实现网站的访问加速。</p>
-<p>当Github的版本库代码更新时，通过 git 的 webhook（git web 钩子）触发 push 事件。用户提交代码（git push）服务器的宝塔 webhook 插件拉取当前 git 最新代码（git pull）。</p>
+<p>首先服务器上需要已经安装了宝塔面板，我习惯用这个面板，其他方式安装webhook也没问题。</p>
 <p>宝塔面板安装webhook插件后，创建一个hook，添加下面的脚本，只需要修改git地址，其他的不用改。</p>
 <pre><code>#!/bin/bash
 echo &quot;&quot;
@@ -190,6 +189,7 @@ http://服务器ip:端口/hook?access_key=HOOK密钥&amp;param=aaa
 @param param string 自定义参数（在hook脚本中使用$1接收）
 </code></pre>
 <p>复制上面自动生成的链接，粘贴到Github的webhook设置，保存。</p>
+<p>当Github的版本库代码更新时，通过 git 的 webhook（git web 钩子）触发 push 事件。用户提交代码（git push）服务器的宝塔 webhook 插件拉取当前 git 最新代码（git pull）</p>
 
                 </div>
                 <div class="clear"></div>
