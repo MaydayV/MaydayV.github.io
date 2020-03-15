@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>我的阅读 | 阿凯的生活记录</title>
+<title>Dnspod的SRV记录解析填写 | 阿凯的生活记录</title>
 <meta name="description" content="日拱一卒，对生活充满热爱！" />
 <link rel="shortcut icon" href="https://blog.caodan.io/favicon.ico">
 <link rel="stylesheet" href="https://blog.caodan.io/styles/main.css">
@@ -15,13 +15,20 @@
 <script src="https://blog.caodan.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://blog.caodan.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <link rel="stylesheet" href="https://blog.caodan.io/media/js/Bmdb.min.css">
-    <script type='text/javascript' src='https://blog.caodan.io/media/js/Bmdb.min.js'></script>
+    <meta name="description" content="在使用微软服务的时候，需要验证域，其中有项是srv记录
+
+搜索教程后配置成功，记录一下。
+
+
+A.主机记录处格式为：服务的名字.协议的类型
+例如：_sip._tcp
+B.记录类型为SRV
+C.线路类型（默认为必填项，否则会导致部分用户无法解..." />
+    <meta name="keywords" content="笔记" />
+    <script src="https://blog.caodan.io/media/js/waterfall.min.js"></script>
+    <script src="https://blog.caodan.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -94,14 +101,108 @@
         </div>
       </div>
 
-      <main id="friends" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.png');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-03-15"><i class="fa fa-calendar"></i><span class="lately">17 分钟前</span></time>
+              
+              <a href="https://blog.caodan.io/dnspod-srv/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/dnspod-srv/"> </span>
+              </a>
+              <span id="/dnspod-srv/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://blog.caodan.io/notes/" class="ctag ctag-0 ctag-notes" aria-label="">笔记</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">Dnspod的SRV记录解析填写</h1>
+            </div>
+          </div>
+        </div>  
+
         <div class="epcl-page-wrapper">
-          <div class="section-content" style="margin-top:3em;"></div>
-        </div>
-        </div>
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <p>在使用微软服务的时候，需要验证域，其中有项是srv记录</p>
+<!-- more -->
+<p>搜索教程后配置成功，记录一下。</p>
+<figure data-type="image" tabindex="1"><img src="https://image.wocaonidaye.net/2020/03/b752bb29bb657.png" alt="微软SRV图" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://image.wocaonidaye.net/2020/03/538a8b13b236d.png" alt="DNS示例图" loading="lazy"></figure>
+<p>A.主机记录处格式为：服务的名字.协议的类型<br>
+例如：_sip._tcp</p>
+<p>B.记录类型为SRV</p>
+<p>C.线路类型（默认为必填项，否则会导致部分用户无法解析）</p>
+<p>D.记录值格式为：优先级 权重 端口 主机名<br>
+例如：100 1 443 sipserver.example.com.<br>
+以空格隔开，记录生成后会自动在域名后面补一个“.”</p>
+<p>E.MX优先级不需要填写，默认就行</p>
+<p>F.TTL不需要填写，添加时系统会自动生成，默认为600秒<br>
+（TTL为缓存时间，数值越小，修改记录各地生效时间越快）</p>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/share.jpg');"></div>
+                 <a href="https://blog.caodan.io/webhook-github/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-03-13">2020-03-13</time>
+                  <h4 class="title white no-margin">webhook实时拉取Github仓库</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://blog.caodan.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <div class="clear"></div>
+<script>
+jQuery(document).ready(function($){
+    $('.vemoji-btn').text('😀');
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                clearInterval(checkExist);
+            }
+        }, 100);
+    }
+})
+</script>
+
+              </div>
+            
+
+            </div>
+          </div>
       </main>
-        <footer id="footer" class="grid-container">
+
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -240,15 +341,9 @@
 </script>
     
 
-    <script>
-    new Bmdb({
-      type: 'books',
-      selector: '.section-content',
-      secret: 'VCDZBP86DUG8xvzzrW8DQjqhniwkyGL7IQKsJfXRfUshUfqC0fKyWCpfUK8u1yKb',
-      noMoreText: '没有更多数据了',
-      limit: 30
-    })
-    </script>
+      
+    <script src="https://blog.caodan.io/media/js/functions-post.js"></script>
+
     </div>
     <!-- end: #wrapper -->
   </body>
