@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>webhook实时拉取Github仓库 | 阿凯的生活记录</title>
+<title>Dnspod的SRV记录解析填写方式 | 阿凯的生活记录</title>
 <meta name="description" content="日拱一卒，对生活充满热爱！" />
 <link rel="shortcut icon" href="https://blog.caodan.io/favicon.ico">
 <link rel="stylesheet" href="https://blog.caodan.io/styles/main.css">
@@ -15,11 +15,16 @@
 <script src="https://blog.caodan.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://blog.caodan.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="博客域名没有备案，而自己有香港的服务器，可以用来同步Github仓库的静态文件。
+    <meta name="description" content="在使用微软服务的时候，需要验证域，其中有项是srv记录
 
-这样就可以让Gridea的博客内容，同步到Github后，再被宝塔面板的webhook拉取到本地目录。
-域名国外解析到Github，国内解析到自己的服务器，..." />
-    <meta name="keywords" content="分享" />
+搜索教程后配置成功，记录一下。
+
+
+A.主机记录处格式为：服务的名字.协议的类型
+例如：_sip._tcp
+B.记录类型为SRV
+C.线路类型（默认为必填项，否则会导致部分用户无法解..." />
+    <meta name="keywords" content="" />
     <script src="https://blog.caodan.io/media/js/waterfall.min.js"></script>
     <script src="https://blog.caodan.io/media/js/prism.min.js"></script>
   </head>
@@ -101,21 +106,19 @@
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.png');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-03-13"><i class="fa fa-calendar"></i><span class="lately">2 天前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-03-15"><i class="fa fa-calendar"></i><span class="lately">14 分钟前</span></time>
               
-              <a href="https://blog.caodan.io/webhook-github/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/webhook-github/"> </span>
+              <a href="https://blog.caodan.io/U3e0QsXzQ/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/U3e0QsXzQ/"> </span>
               </a>
-              <span id="/webhook-github/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/U3e0QsXzQ/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://blog.caodan.io/share/" class="ctag ctag-0 ctag-share" aria-label="">分享</a>
-                    
               </div>
-              <h1 class="title ularge white bold">webhook实时拉取Github仓库</h1>
+              <h1 class="title ularge white bold">Dnspod的SRV记录解析填写方式</h1>
             </div>
           </div>
         </div>  
@@ -125,77 +128,21 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>博客域名没有备案，而自己有香港的服务器，可以用来同步Github仓库的静态文件。</p>
+                  <p>在使用微软服务的时候，需要验证域，其中有项是srv记录</p>
 <!-- more -->
-<p>这样就可以让Gridea的博客内容，同步到Github后，再被宝塔面板的webhook拉取到本地目录。<br>
-域名国外解析到Github，国内解析到自己的服务器，实现网站的访问加速。</p>
-<p>首先服务器上需要已经安装了宝塔面板，我习惯用这个面板，其他方式安装webhook也没问题。</p>
-<p>宝塔面板安装webhook插件后，创建一个hook，添加下面的脚本，只需要修改git地址，其他的不用改。</p>
-<pre><code>#!/bin/bash
-echo &quot;&quot;
-#输出当前时间
-date --date='0 days ago' &quot;+%Y-%m-%d %H:%M:%S&quot;
-echo &quot;Start&quot;
-#判断宝塔WebHook参数是否存在
-if [ ! -n &quot;$1&quot; ]; then
-                echo &quot;param参数错误&quot;
-        echo &quot;End&quot;
-        exit
-fi
-#git项目路径
-gitPath=&quot;/www/wwwroot/$1&quot;
-#git 网址
-gitHttp=&quot;https://github.com/xxxxx.git&quot; #只需要修改成仓库的git地址，其他地方默认不修改
-
-echo &quot;Web站点路径：$gitPath&quot;
-
-#判断项目路径是否存在
-if [ -d &quot;$gitPath&quot; ]; then
-        cd $gitPath
-        #判断是否存在git目录
-        if [ ! -d &quot;.git&quot; ]; then
-                echo &quot;在该目录下克隆 git&quot;
-                sudo git clone $gitHttp gittemp
-                sudo mv gittemp/.git .
-                sudo rm -rf gittemp
-        fi
-        echo &quot;拉取最新的项目文件&quot;
-        sudo git reset --hard origin/master
-        sudo git pull        
-        echo &quot;设置目录权限&quot;
-        sudo chown -R www:www $gitPath
-        echo &quot;End&quot;
-        exit
-else
-        echo &quot;该项目路径不存在&quot;
-                echo &quot;新建项目目录&quot;
-        mkdir $gitPath
-        cd $gitPath
-        #判断是否存在git目录
-        if [ ! -d &quot;.git&quot; ]; then
-                echo &quot;在该目录下克隆 git&quot;
-                sudo git clone $gitHttp gittemp
-                sudo mv gittemp/.git .
-                sudo rm -rf gittemp
-        fi
-        echo &quot;拉取最新的项目文件&quot;
-        sudo git reset --hard origin/master
-        sudo git pull
-        echo &quot;设置目录权限&quot;
-        sudo chown -R www:www $gitPath
-        echo &quot;End&quot;
-        exit
-fi
-</code></pre>
-<p>保存后，点击查看密钥，如下：</p>
-<pre><code>宝塔WebHook使用方法:
-GET/POST:
-http://服务器ip:端口/hook?access_key=HOOK密钥&amp;param=aaa
-@param access_key string HOOK密钥
-@param param string 自定义参数（在hook脚本中使用$1接收）
-</code></pre>
-<p>复制上面自动生成的链接，粘贴到Github的webhook设置，保存。</p>
-<p>当Github的版本库代码更新时，通过 git 的 webhook（git web 钩子）触发 push 事件。用户提交代码（git push）服务器的宝塔 webhook 插件拉取当前 git 最新代码（git pull）</p>
+<p>搜索教程后配置成功，记录一下。</p>
+<figure data-type="image" tabindex="1"><img src="https://image.wocaonidaye.net/2020/03/b752bb29bb657.png" alt="微软SRV图" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://image.wocaonidaye.net/2020/03/538a8b13b236d.png" alt="DNS示例图" loading="lazy"></figure>
+<p>A.主机记录处格式为：服务的名字.协议的类型<br>
+例如：_sip._tcp</p>
+<p>B.记录类型为SRV</p>
+<p>C.线路类型（默认为必填项，否则会导致部分用户无法解析）</p>
+<p>D.记录值格式为：优先级 权重 端口 主机名<br>
+例如：100 1 443 sipserver.example.com.<br>
+以空格隔开，记录生成后会自动在域名后面补一个“.”</p>
+<p>E.MX优先级不需要填写，默认就行</p>
+<p>F.TTL不需要填写，添加时系统会自动生成，默认为600秒<br>
+（TTL为缓存时间，数值越小，修改记录各地生效时间越快）</p>
 
                 </div>
                 <div class="clear"></div>
@@ -205,26 +152,13 @@ http://服务器ip:端口/hook?access_key=HOOK密钥&amp;param=aaa
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/gridea.jpg');"></div>
-                 <a href="https://blog.caodan.io/U3e0QsXzQ/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-03-15">2020-03-15</time>
-                  <h4 class="title white no-margin">Dnspod的SRV记录解析填写方式</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://blog.caodan.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/life.jpg');"></div>
-                 <a href="https://blog.caodan.io/wuhui/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/share.jpg');"></div>
+                 <a href="https://blog.caodan.io/webhook-github/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-03-03">2020-03-03</time>
-                  <h4 class="title white no-margin">关于生活里的误会</h4>
+                  <time datetime="2020-03-13">2020-03-13</time>
+                  <h4 class="title white no-margin">webhook实时拉取Github仓库</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://blog.caodan.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
