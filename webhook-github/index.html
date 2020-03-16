@@ -86,7 +86,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1584290566681" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1584343336863" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="输入关键词搜索" aria-label="输入关键词搜索" required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -101,7 +101,7 @@
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.png');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-03-13"><i class="fa fa-calendar"></i><span class="lately">2 天前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-03-13"><i class="fa fa-calendar"></i><span class="lately">3 天前</span></time>
               
               <a href="https://blog.caodan.io/webhook-github/#comments" class="comments meta-info" title="">
                 <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/webhook-github/"> </span>
@@ -194,7 +194,12 @@ http://服务器ip:端口/hook?access_key=HOOK密钥&amp;param=aaa
 @param access_key string HOOK密钥
 @param param string 自定义参数（在hook脚本中使用$1接收）
 </code></pre>
-<p>复制上面自动生成的链接，粘贴到Github的webhook设置，保存。</p>
+<p><mark>注意粘贴前把网址最后的aaa换成你的宝塔对应静态博客的网站的目录名</mark><br>
+例如我的网站路径 wwwroot/blog，就把<mark>aaa</mark>替换成<mark>blog</mark></p>
+<p>复制上面自动生成的链接，粘贴到Github的webhook设置<br>
+<img src="https://image.wocaonidaye.net/2020/03/544a24a32d1aa.png" alt="544a24a32d1aa" loading="lazy"></p>
+<p>内容类型选择<mark>json</mark>，其他默认，保存提交。</p>
+<p>然后去Gridea提交更新博客，再看Webhook的日志，再检查目录下有没有文件就能看到是否同步成功了。</p>
 <p>当Github的版本库代码更新时，通过 git 的 webhook（git web 钩子）触发 push 事件。用户提交代码（git push）服务器的宝塔 webhook 插件拉取当前 git 最新代码（git pull）</p>
 
                 </div>
