@@ -86,7 +86,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1584343527997" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1584344871055" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="输入关键词搜索" aria-label="输入关键词搜索" required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -195,7 +195,8 @@ http://服务器ip:端口/hook?access_key=HOOK密钥&amp;param=aaa
 @param param string 自定义参数（在hook脚本中使用$1接收）
 </code></pre>
 <p><mark>注意粘贴前把网址最后的aaa换成你的宝塔对应静态博客的网站的目录名</mark><br>
-例如我的网站路径 wwwroot/blog，就把<mark>aaa</mark>替换成<mark>blog</mark></p>
+例如我的网站路径 wwwroot/blog，就把<mark>aaa</mark>替换成<mark>blog</mark><br>
+如果不替换的话，会在你的服务器根目录创建一个aaa目录，你把站点目录修改为aaa目录，也可以。</p>
 <p>复制上面自动生成的链接，粘贴到Github的webhook设置<br>
 <img src="https://image.wocaonidaye.net/2020/03/544a24a32d1aa.png" alt="544a24a32d1aa" loading="lazy"></p>
 <p>内容类型选择<mark>json</mark>，secret就是webhook的一串密钥，复制过去粘贴，其他默认，保存提交。</p>
