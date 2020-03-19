@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.caodan.io</id>
     <title>阿凯的生活记录</title>
-    <updated>2020-03-19T05:12:38.650Z</updated>
+    <updated>2020-03-19T05:13:16.523Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.caodan.io"/>
     <link rel="self" href="https://blog.caodan.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, 阿凯的生活记录</rights>
     <entry>
         <title type="html"><![CDATA[OneDrive指定账户扩容命令]]></title>
-        <id>https://blog.caodan.io/pEUNgZEUl/</id>
-        <link href="https://blog.caodan.io/pEUNgZEUl/">
+        <id>https://blog.caodan.io/onedrivepowershell/</id>
+        <link href="https://blog.caodan.io/onedrivepowershell/">
         </link>
         <updated>2020-03-18T08:40:41.000Z</updated>
         <summary type="html"><![CDATA[<p>OneDrive扩容步骤以及命令，适用于获得扩容权限的账户。</p>

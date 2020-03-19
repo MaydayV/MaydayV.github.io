@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>我的观影 | 阿凯的生活记录</title>
+<title>OneDrive指定账户扩容命令 | 阿凯的生活记录</title>
 <meta name="description" content="日拱一卒，对生活充满热爱！" />
 <link rel="shortcut icon" href="https://blog.caodan.io/favicon.ico">
 <link rel="stylesheet" href="https://blog.caodan.io/styles/main.css">
@@ -15,13 +15,16 @@
 <script src="https://blog.caodan.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://blog.caodan.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <link rel="stylesheet" href="https://blog.caodan.io/media/js/Bmdb.min.css">
-    <script type='text/javascript' src='https://blog.caodan.io/media/js/Bmdb.min.js'></script>
+    <meta name="description" content="OneDrive扩容步骤以及命令，适用于获得扩容权限的账户。
+
+1、电脑打开Windows PowerShell
+2、先运行代码，检验Windows PowerShell是否安装成功：
+Get-Module -Name Microsoft...." />
+    <meta name="keywords" content="笔记" />
+    <script src="https://blog.caodan.io/media/js/waterfall.min.js"></script>
+    <script src="https://blog.caodan.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -94,14 +97,113 @@
         </div>
       </div>
 
-      <main id="friends" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.png');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-03-18"><i class="fa fa-calendar"></i><span class="lately">21 小时前</span></time>
+              
+              <a href="https://blog.caodan.io/onedrivepowershell/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/onedrivepowershell/"> </span>
+              </a>
+              <span id="/onedrivepowershell/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://blog.caodan.io/notes/" class="ctag ctag-0 ctag-notes" aria-label="">笔记</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">OneDrive指定账户扩容命令</h1>
+            </div>
+          </div>
+        </div>  
+
         <div class="epcl-page-wrapper">
-          <div class="section-content" style="margin-top:3em;"></div>
-        </div>
-        </div>
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <p>OneDrive扩容步骤以及命令，适用于获得扩容权限的账户。</p>
+<!-- more -->
+<p>1、电脑打开Windows PowerShell</p>
+<p>2、先运行代码，检验Windows PowerShell是否安装成功：</p>
+<p><code>Get-Module -Name Microsoft.Online.SharePoint.PowerShell -ListAvailable | Select Name,Version</code><br>
+如果返回软件名和版本号，即安装成功，继续下一步。<br>
+如果没返回任何内容，则去官网下载最新版本安装。</p>
+<p>3、使用管理员用户名和密码连接，运行如下代码：<br>
+`$adminUPN=&quot;admin@wwxx.onmicrosoft.com&quot;</p>
+<p>$orgName=&quot;wwxx&quot;</p>
+<p>$userCredential = Get-Credential -UserName $adminUPN -Message &quot;Type the password.&quot;</p>
+<p>Connect-SPOService -Url https://$orgName-admin.sharepoint.com -Credential</p>
+<p>$userCredential`<br>
+adminUPN 是管理员邮箱，orgName 是组织名，将其替换即可，如果默认邮箱不是微软邮箱，是自己绑定的独立域名，则对应修改邮箱为当前邮箱。</p>
+<p>4、在弹出的窗口输入账号密码。</p>
+<p>5、运行命令，进行扩容。<br>
+<code>Set-SPOSite -Identity &lt;user's OneDrive URL&gt; -StorageQuota &lt;quota&gt;</code></p>
+<p><code>&lt;user's OneDrive URL&gt; 更改为你要扩容的用户URL &lt;quota&gt; 是储存空间值，以MB为单位（26214400MB=25TB）</code></p>
+<p>例如：<br>
+<code>Set-SPOSite -Identity https://ww0-my.sharepoint.com/personal/admin_ww0_onmicrosoft_com -StorageQuota 26214400</code></p>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/notes.jpg');"></div>
+                 <a href="https://blog.caodan.io/dnspod-srv/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-03-15">2020-03-15</time>
+                  <h4 class="title white no-margin">Dnspod的SRV记录解析填写</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://blog.caodan.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <div class="clear"></div>
+<script>
+jQuery(document).ready(function($){
+    $('.vemoji-btn').text('😀');
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                clearInterval(checkExist);
+            }
+        }, 100);
+    }
+})
+</script>
+
+              </div>
+            
+
+            </div>
+          </div>
       </main>
-        <footer id="footer" class="grid-container">
+
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -242,15 +344,9 @@
 </script>
     
 
-    <script>
-    new Bmdb({
-      type: 'movies',
-      selector: '.section-content',
-      secret: 'VCDZBP86DUG8xvzzrW8DQjqhniwkyGL7IQKsJfXRfUshUfqC0fKyWCpfUK8u1yKb',
-      noMoreText: '没有更多数据了',
-      limit: 30
-    })
-    </script>
+      
+    <script src="https://blog.caodan.io/media/js/functions-post.js"></script>
+
     </div>
     <!-- end: #wrapper -->
   </body>
