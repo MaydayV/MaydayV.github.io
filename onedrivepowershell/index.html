@@ -87,7 +87,7 @@ Get-Module -Name Microsoft...." />
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1584594791035" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1584594848697" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="输入关键词搜索" aria-label="输入关键词搜索" required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -134,11 +134,7 @@ Get-Module -Name Microsoft...." />
 如果返回软件名和版本号，即安装成功，继续下一步。<br>
 如果没返回任何内容，则去官网下载最新版本安装。</p>
 <p>3、使用管理员用户名和密码连接，运行如下代码：<br>
-`$adminUPN=&quot;admin@wwxx.onmicrosoft.com&quot;</p>
-<p>$orgName=&quot;wwxx&quot;</p>
-<p>$userCredential = Get-Credential -UserName $adminUPN -Message &quot;Type the password.&quot;</p>
-<p>Connect-SPOService -Url https://$orgName-admin.sharepoint.com -Credential</p>
-<p>$userCredential`<br>
+<code>$adminUPN=&quot;admin@wwxx.onmicrosoft.com&quot; $orgName=&quot;wwxx&quot; $userCredential = Get-Credential -UserName $adminUPN -Message &quot;Type the password.&quot; Connect-SPOService -Url https://$orgName-admin.sharepoint.com -Credential $userCredential</code><br>
 adminUPN 是管理员邮箱，orgName 是组织名，将其替换即可，如果默认邮箱不是微软邮箱，是自己绑定的独立域名，则对应修改邮箱为当前邮箱。</p>
 <p>4、在弹出的窗口输入账号密码。</p>
 <p>5、运行命令，进行扩容。<br>
