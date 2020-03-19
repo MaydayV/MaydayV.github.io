@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.caodan.io</id>
     <title>阿凯的生活记录</title>
-    <updated>2020-03-18T07:36:42.314Z</updated>
+    <updated>2020-03-19T05:10:09.788Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.caodan.io"/>
     <link rel="self" href="https://blog.caodan.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://blog.caodan.io/images/avatar.png</logo>
     <icon>https://blog.caodan.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 阿凯的生活记录</rights>
+    <entry>
+        <title type="html"><![CDATA[OneDrive指定账户扩容命令]]></title>
+        <id>https://blog.caodan.io/pEUNgZEUl/</id>
+        <link href="https://blog.caodan.io/pEUNgZEUl/">
+        </link>
+        <updated>2020-03-18T08:40:41.000Z</updated>
+        <summary type="html"><![CDATA[<p>OneDrive扩容步骤以及命令，适用于获得扩容权限的账户。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>OneDrive扩容步骤以及命令，适用于获得扩容权限的账户。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Dnspod的SRV记录解析填写]]></title>
         <id>https://blog.caodan.io/dnspod-srv/</id>
