@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dnspod的SRV记录解析填写 | 阿凯的生活记录</title>
+<title>ssh-keygen 公钥格式 | 阿凯的生活记录</title>
 <meta name="description" content="日拱一卒，对生活充满热爱！" />
 <link rel="shortcut icon" href="https://blog.caodan.io/favicon.ico">
 <link rel="stylesheet" href="https://blog.caodan.io/styles/main.css">
@@ -15,15 +15,12 @@
 <script src="https://blog.caodan.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://blog.caodan.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="在使用微软服务的时候，需要验证域，其中有项是srv记录
+    <meta name="description" content="公钥：公钥有2种格式，标准格式和one-line格式
 
-搜索教程后配置成功，记录一下。
-
-
-A.主机记录处格式为：服务的名字.协议的类型
-例如：_sip._tcp
-B.记录类型为SRV
-C.线路类型（默认为必填项，否则会导致部分用户无法解..." />
+标准格式：一些ssh服务器需要这种格式。
+直接点击保存公钥，保存下来的格式就是标准格式。
+—- BEGIN SSH2 PUBLIC KEY —-
+Comment: “rsa-key-2..." />
     <meta name="keywords" content="笔记" />
     <script src="https://blog.caodan.io/media/js/waterfall.min.js"></script>
     <script src="https://blog.caodan.io/media/js/prism.min.js"></script>
@@ -106,12 +103,12 @@ C.线路类型（默认为必填项，否则会导致部分用户无法解..." /
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.png');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-03-15"><i class="fa fa-calendar"></i><span class="lately">2 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-05-19"><i class="fa fa-calendar"></i><span class="lately">2 分钟前</span></time>
               
-              <a href="https://blog.caodan.io/dnspod-srv/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/dnspod-srv/"> </span>
+              <a href="https://blog.caodan.io/sshgeshi/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/sshgeshi/"> </span>
               </a>
-              <span id="/dnspod-srv/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/sshgeshi/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
@@ -120,7 +117,7 @@ C.线路类型（默认为必填项，否则会导致部分用户无法解..." /
                       <a href="https://blog.caodan.io/notes/" class="ctag ctag-0 ctag-notes" aria-label="">笔记</a>
                     
               </div>
-              <h1 class="title ularge white bold">Dnspod的SRV记录解析填写</h1>
+              <h1 class="title ularge white bold">ssh-keygen 公钥格式</h1>
             </div>
           </div>
         </div>  
@@ -130,21 +127,20 @@ C.线路类型（默认为必填项，否则会导致部分用户无法解..." /
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>在使用微软服务的时候，需要验证域，其中有项是srv记录</p>
+                  <p>公钥：公钥有2种格式，标准格式和one-line格式</p>
 <!-- more -->
-<p>搜索教程后配置成功，记录一下。</p>
-<figure data-type="image" tabindex="1"><img src="https://image.wocaonidaye.net/2020/03/b752bb29bb657.png" alt="微软SRV图" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="https://image.wocaonidaye.net/2020/03/538a8b13b236d.png" alt="DNS示例图" loading="lazy"></figure>
-<p>A.主机记录处格式为：服务的名字.协议的类型<br>
-例如：_sip._tcp</p>
-<p>B.记录类型为SRV</p>
-<p>C.线路类型（默认为必填项，否则会导致部分用户无法解析）</p>
-<p>D.记录值格式为：优先级 权重 端口 主机名<br>
-例如：100 1 443 sipserver.example.com.<br>
-以空格隔开，记录生成后会自动在域名后面补一个“.”</p>
-<p>E.MX优先级不需要填写，默认就行</p>
-<p>F.TTL不需要填写，添加时系统会自动生成，默认为600秒<br>
-（TTL为缓存时间，数值越小，修改记录各地生效时间越快）</p>
+<p><code>标准格式：一些ssh服务器需要这种格式。</code><br>
+直接点击保存公钥，保存下来的格式就是标准格式。<br>
+—- BEGIN SSH2 PUBLIC KEY —-<br>
+Comment: “rsa-key-20101208″<br>
+AAAAB3NzaC1yc2EAAAABJQAAAIB4LzyTTbPr3tY9ecJTzAyQlecO8qktGBKqy5m9<br>
+lt4Af5ZQ+zxWOVIG0q2KBRtrL0KXPtge9QDPl7/ZtUdQTt0TKKg8fpoEzW8Jc6vq<br>
+SBsfCvDPxv+0vEsrLCJP58IxEh66gTpnJOjoCa+NfZJte/drsE4EwcvOmNeBrbhY<br>
+L7Z3UQ==<br>
+—- END SSH2 PUBLIC KEY —-</p>
+<p><code>one-line格式</code><br>
+Openssh服务器需要这种格式。将公钥复制到authorized_keys文件里，这种把PuTTYgen生成的公钥复制下，并粘贴到SSH服务器里的格式就是one-line格式。<br>
+如ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAwtUKdm+wzgBIJPazvE3v2DXrFSMiOxv/ch+hR7aqq2pw7Hk6+r7Mpsic4+22ZNC91HjqlBEfsoQ+/rz +e8qcJM17s8SNeumysWO+xFY913SXG5gDpyWMwQhISCPflcudPjImz5ytRYQZ+YtW4QHz54h5Clw18x9qidOQfPESuFc= rsa-key-20101208</p>
 
                 </div>
                 <div class="clear"></div>
@@ -154,26 +150,13 @@ C.线路类型（默认为必填项，否则会导致部分用户无法解..." /
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/notes.jpg');"></div>
-                 <a href="https://blog.caodan.io/onedrivepowershell/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-03-18">2020-03-18</time>
-                  <h4 class="title white no-margin">OneDrive指定账户扩容命令</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://blog.caodan.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/share.jpg');"></div>
-                 <a href="https://blog.caodan.io/webhook-github/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/gridea.jpg');"></div>
+                 <a href="https://blog.caodan.io/tgtOCEVMF/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-03-13">2020-03-13</time>
-                  <h4 class="title white no-margin">webhook实时拉取Github仓库</h4>
+                  <time datetime="2020-05-19">2020-05-19</time>
+                  <h4 class="title white no-margin">ssh-keygen 公钥格式</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://blog.caodan.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
