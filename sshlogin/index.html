@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>搜索结果 | 阿凯的生活记录</title>
+<title>Oracle甲骨文服务器登陆 | 阿凯的生活记录</title>
 <meta name="description" content="日拱一卒，对生活充满热爱！" />
 <link rel="shortcut icon" href="https://blog.caodan.io/favicon.ico">
 <link rel="stylesheet" href="https://blog.caodan.io/styles/main.css">
@@ -14,16 +14,20 @@
 <script src="https://blog.caodan.io/media/js/view-image.min.js"></script>
 <script src="https://blog.caodan.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://blog.caodan.io/media/js/functions.js"></script>
-    <script src="/media/gridea-search/fuse.js"></script>
-    <script src="/media/gridea-search/ejs.min.js"></script>
-    <script src="/media/gridea-search/gridea-search.js"></script>
-    <script src="/media/gridea-search/result-template.ejs" type="text/ejs"></script>
-</head>
+    <meta name="referrer" content="never">
+    <meta name="description" content="记录一些常用命令
 
+查看本机公钥和私钥
+1、进入 .ssh 目录：cd ~/.ssh
+2、找到 xxxx.pub 文件：ls
+3、查看公钥内容：cat xxxx.pub 或者 vim xxxx.pub
+4、同名无后缀的是私钥
+SSH登录命令..." />
+    <meta name="keywords" content="笔记" />
+    <script src="https://blog.caodan.io/media/js/waterfall.min.js"></script>
+    <script src="https://blog.caodan.io/media/js/prism.min.js"></script>
+  </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -96,22 +100,104 @@
         </div>
       </div>
 
-      <main id="home" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
-        <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
-          <div class="main-article post">
-            <div id="gridea-search-result">
-              <h2 class="searching">搜索中......</h2>
-              <h2 class="no-result" style="display:none">未搜索到相关文章</h2>
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.png');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-05-19"><i class="fa fa-calendar"></i><span class="lately">14 分钟前</span></time>
+              
+              <a href="https://blog.caodan.io/sshlogin/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/sshlogin/"> </span>
+              </a>
+              <span id="/sshlogin/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://blog.caodan.io/notes/" class="ctag ctag-0 ctag-notes" aria-label="">笔记</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">Oracle甲骨文服务器登陆</h1>
             </div>
           </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <p>记录一些常用命令</p>
+<!-- more -->
+<p>查看本机公钥和私钥<br>
+1、进入 .ssh 目录：<code>cd ~/.ssh</code><br>
+2、找到 xxxx.pub 文件：<code>ls</code><br>
+3、查看公钥内容：<code>cat xxxx.pub</code> 或者 <code>vim xxxx.pub</code><br>
+4、同名无后缀的是私钥</p>
+<p>SSH登录命令<br>
+ssh -i ~/.ssh/私钥文件名 opc@甲骨文ip</p>
+<p>登录后切换root用户<br>
+<code>sudo -i</code></p>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/notes.jpg');"></div>
+                 <a href="https://blog.caodan.io/sshgeshi/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-05-19">2020-05-19</time>
+                  <h4 class="title white no-margin">ssh-keygen 公钥格式</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://blog.caodan.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <div class="clear"></div>
+<script>
+jQuery(document).ready(function($){
+    $('.vemoji-btn').text('😀');
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                clearInterval(checkExist);
+            }
+        }, 100);
+    }
+})
+</script>
+
+              </div>
+            
+
+            </div>
           </div>
-        </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -257,6 +343,9 @@
     })
 </script>
     
+
+      
+    <script src="https://blog.caodan.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
