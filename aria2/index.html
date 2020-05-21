@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>OneDrive指定账户扩容命令 | 阿凯的生活记录</title>
+<title>Aria2 一键安装管理脚本 | 阿凯的生活记录</title>
 <meta name="description" content="日拱一卒，对生活充满热爱！" />
 <link rel="shortcut icon" href="https://blog.caodan.io/favicon.ico">
 <link rel="stylesheet" href="https://blog.caodan.io/styles/main.css">
@@ -15,11 +15,14 @@
 <script src="https://blog.caodan.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://blog.caodan.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="OneDrive扩容步骤以及命令，适用于获得扩容权限的账户。
+    <meta name="description" content="Centos7下安装Aria2教程
 
-1、电脑打开Windows PowerShell
-2、先运行代码，检验Windows PowerShell是否安装成功：
-Get-Module -Name Microsoft...." />
+系统要求
+CentOS 7+ / Debian 6+ / Ubuntu 14.04 +
+推荐 Debian 7 x64，脚本在这个系统上面出错率最低。
+安装步骤
+执行下面的代码下载并运行脚本。
+wget..." />
     <meta name="keywords" content="笔记" />
     <script src="https://blog.caodan.io/media/js/waterfall.min.js"></script>
     <script src="https://blog.caodan.io/media/js/prism.min.js"></script>
@@ -102,12 +105,12 @@ Get-Module -Name Microsoft...." />
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.png');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-03-18"><i class="fa fa-calendar"></i><span class="lately">2 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-05-21"><i class="fa fa-calendar"></i><span class="lately">4 分钟前</span></time>
               
-              <a href="https://blog.caodan.io/onedrivepowershell/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/onedrivepowershell/"> </span>
+              <a href="https://blog.caodan.io/aria2/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/aria2/"> </span>
               </a>
-              <span id="/onedrivepowershell/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/aria2/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
@@ -116,7 +119,7 @@ Get-Module -Name Microsoft...." />
                       <a href="https://blog.caodan.io/notes/" class="ctag ctag-0 ctag-notes" aria-label="">笔记</a>
                     
               </div>
-              <h1 class="title ularge white bold">OneDrive指定账户扩容命令</h1>
+              <h1 class="title ularge white bold">Aria2 一键安装管理脚本</h1>
             </div>
           </div>
         </div>  
@@ -126,25 +129,55 @@ Get-Module -Name Microsoft...." />
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>OneDrive扩容步骤以及命令，适用于获得扩容权限的账户。</p>
+                  <p>Centos7下安装Aria2教程</p>
 <!-- more -->
-<p>1、电脑打开Windows PowerShell</p>
-<p>2、先运行代码，检验Windows PowerShell是否安装成功：</p>
-<p><code>Get-Module -Name Microsoft.Online.SharePoint.PowerShell -ListAvailable | Select Name,Version</code><br>
-如果返回软件名和版本号，即安装成功，继续下一步。<br>
-如果没返回任何内容，则去官网下载最新版本安装。</p>
-<p>3、使用管理员用户名和密码连接，运行如下代码：<br>
-<code>$adminUPN=&quot;admin@wwxx.onmicrosoft.com&quot;</code><br>
-<code>$orgName=&quot;wwxx&quot;</code><br>
-<code>$userCredential = Get-Credential -UserName $adminUPN -Message &quot;Type the password.&quot; Connect-SPOService -Url https://$orgName-admin.sharepoint.com -Credential</code><br>
-<code>$userCredential</code><br>
-adminUPN 是管理员邮箱，orgName 是组织名，将其替换即可，如果默认邮箱不是微软邮箱，是自己绑定的独立域名，则对应修改邮箱为当前邮箱。</p>
-<p>4、在弹出的窗口输入账号密码。</p>
-<p>5、运行命令，进行扩容。<br>
-<code>Set-SPOSite -Identity &lt;user's OneDrive URL&gt; -StorageQuota &lt;quota&gt;</code></p>
-<p><code>&lt;user's OneDrive URL&gt; 更改为你要扩容的用户URL &lt;quota&gt; 是储存空间值，以MB为单位（26214400MB=25TB）</code></p>
-<p>例如：<br>
-<code>Set-SPOSite -Identity https://ww0-my.sharepoint.com/personal/admin_ww0_onmicrosoft_com -StorageQuota 26214400</code></p>
+<p>系统要求<br>
+CentOS 7+ / Debian 6+ / Ubuntu 14.04 +</p>
+<p>推荐 Debian 7 x64，脚本在这个系统上面出错率最低。</p>
+<h1 id="安装步骤">安装步骤</h1>
+<p>执行下面的代码下载并运行脚本。<br>
+<code>wget -N --no-check-certificate https://softs.fun/Bash/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh</code></p>
+<h2 id="如果上面这个脚本无法下载尝试使用备用下载">如果上面这个脚本无法下载，尝试使用备用下载：</h2>
+<p><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh</code><br>
+运行脚本后会出现脚本操作菜单，选择并输入 1 就会开始安装。</p>
+<h1 id="使用说明">使用说明</h1>
+<p>进入下载脚本的目录并运行脚本：</p>
+<p><code>./aria2.sh</code><br>
+然后选择你要执行的选项即可。</p>
+<p>Aria2 一键安装管理脚本 [vx.x.x]<br>
+-- Toyo | doub.bid/shell-jc4 --</p>
+<ol start="0">
+<li>升级脚本<br>
+————————————</li>
+<li>安装 Aria2</li>
+<li>卸载 Aria2<br>
+————————————</li>
+<li>启动 Aria2</li>
+<li>停止 Aria2</li>
+<li>重启 Aria2<br>
+————————————</li>
+<li>修改 配置文件</li>
+<li>查看 日志信息<br>
+————————————</li>
+</ol>
+<p>当前状态: 已安装 并 已启动</p>
+<p>请输入数字 [0-7]:</p>
+<h1 id="其他操作">其他操作</h1>
+<p>启动：service aria2 start</p>
+<p>停止：service aria2 stop</p>
+<p>重启：service aria2 restart</p>
+<p>查看状态：service aria2 status</p>
+<p>配置文件：/root/.aria2/aria2.conf （配置文件包含中文注释，但是一些系统可能不支持显示中文）</p>
+<p>默认密匙：doub.bid</p>
+<p>下载目录：/usr/local/caddy/www/aria2/Download</p>
+<h1 id="提示-wget-command-not-found-的错误">提示 wget: command not found 的错误</h1>
+<p>这是系统精简的太干净了，wget都没有安装，所以需要安装wget。</p>
+<h3 id="centos系统">CentOS系统:</h3>
+<p>yum install -y wget</p>
+<h3 id="debianubuntu系统">Debian/Ubuntu系统:</h3>
+<p>apt-get install -y wget</p>
+<h1 id="升级脚本">升级脚本</h1>
+<p>升级脚本只需要运行脚本，然后选择并输入 0 回车即可，会自动检测最新版本并下载，当然重新下载脚本文件也可以，会自动覆盖原文件。</p>
 
                 </div>
                 <div class="clear"></div>
@@ -154,26 +187,13 @@ adminUPN 是管理员邮箱，orgName 是组织名，将其替换即可，如果
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/life.jpg');"></div>
-                 <a href="https://blog.caodan.io/SnapicPlus/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-03-25">2020-03-25</time>
-                  <h4 class="title white no-margin">Snapic Plus主题收获记录</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://blog.caodan.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
                 <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/notes.jpg');"></div>
-                 <a href="https://blog.caodan.io/dnspod-srv/" class="full-link"></a>
+                 <a href="https://blog.caodan.io/sshlogin/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-03-15">2020-03-15</time>
-                  <h4 class="title white no-margin">Dnspod的SRV记录解析填写</h4>
+                  <time datetime="2020-05-19">2020-05-19</time>
+                  <h4 class="title white no-margin">Oracle甲骨文服务器登陆</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://blog.caodan.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
