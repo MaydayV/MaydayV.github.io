@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.caodan.io</id>
     <title>阿凯的生活记录</title>
-    <updated>2020-10-06T16:49:54.090Z</updated>
+    <updated>2021-05-08T10:29:33.843Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.caodan.io"/>
     <link rel="self" href="https://blog.caodan.io/atom.xml"/>
     <subtitle>日拱一卒，对生活充满热爱！</subtitle>
     <logo>https://blog.caodan.io/images/avatar.png</logo>
     <icon>https://blog.caodan.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 阿凯的生活记录</rights>
+    <rights>All rights reserved 2021, 阿凯的生活记录</rights>
     <entry>
         <title type="html"><![CDATA[Aria2 一键安装管理脚本]]></title>
         <id>https://blog.caodan.io/aria2/</id>
