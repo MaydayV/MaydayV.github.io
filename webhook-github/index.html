@@ -1,0 +1,429 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>webhook实时拉取Github仓库 | 阿凯的生活记录</title>
+<meta name="description" content="日拱一卒，对生活充满热爱！" />
+<link rel="shortcut icon" href="https://blog.caodan.io/favicon.ico">
+<link rel="stylesheet" href="https://blog.caodan.io/styles/main.css">
+
+<script src="https://blog.caodan.io/media/js/jquery.min.js"></script>
+<script src="https://blog.caodan.io/media/js/masonry.pkgd.min.js"></script>
+<script src="https://blog.caodan.io/media/js/aos.js"></script>
+<script src="https://blog.caodan.io/media/js/pace.min.js"></script>
+<script src="https://blog.caodan.io/media/js/view-image.min.js"></script>
+<script src="https://blog.caodan.io/media/js/jquery.magnific-popup.min.js"></script>
+<script src="https://blog.caodan.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="博客域名没有备案，而自己有香港的服务器，可以用来同步Github仓库的静态文件。
+
+这样就可以让Gridea的博客内容，同步到Github后，再被宝塔面板的webhook拉取到本地目录。
+域名国外解析到Github，国内解析到自己的服务器，..." />
+    <meta name="keywords" content="分享" />
+    <script src="https://blog.caodan.io/media/js/waterfall.min.js"></script>
+    <script src="https://blog.caodan.io/media/js/prism.min.js"></script>
+  </head>
+  <body>
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
+        </div>
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="https://blog.caodan.io"><img src="/media/images/custom-headerLogo.png" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
+
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                <li class=""><a href="https://blog.caodan.io" class="menu">首页</a></li>
+                
+                  <li class="" >
+                    <a href="/life" class="menu">
+                      日常
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="https://photo.caodan.io/" class="menu">
+                      摄影
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/archives" class="menu">
+                      归档
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/friends" class="menu">
+                      友链
+                    </a>
+                  </li>
+                
+                <li class="search-menu-item hide-on-mobile hide-on-tablet"><a href="#search-lightbox" class="lightbox mfp-inline"><i class="fa fa-search-line"></i></a></li>
+              </ul>
+            </nav>
+            <a href="#search-lightbox" class="lightbox epcl-search-button mfp-inline hide-on-tablet hide-on-desktop"><i class="fa fa-search-line"></i></a>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
+        </div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
+      <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
+        <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
+          <div class="search-wrapper section">
+            <form id="gridea-search-form" data-update="1728968123968" action="/search/index.html" class="search-form" _lpchecked="1">
+              <input type="text" name="q" id="s" value="" class="search-field" placeholder="输入关键词搜索" aria-label="输入关键词搜索" required="">
+              <button type="submit" class="submit" aria-label="Submit">
+                <i class="fa fa-search-line"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.png');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-03-13"><i class="fa fa-calendar"></i><span class="lately">5 年前</span></time>
+              
+              <a href="https://blog.caodan.io/webhook-github/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/webhook-github/"> </span>
+              </a>
+              <span id="/webhook-github/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://blog.caodan.io/share/" class="ctag ctag-0 ctag-share" aria-label="">分享</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">webhook实时拉取Github仓库</h1>
+            </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <p>博客域名没有备案，而自己有香港的服务器，可以用来同步Github仓库的静态文件。</p>
+<!-- more -->
+<p>这样就可以让Gridea的博客内容，同步到Github后，再被宝塔面板的webhook拉取到本地目录。<br>
+域名国外解析到Github，国内解析到自己的服务器，实现网站的访问加速。</p>
+<p>首先服务器上需要已经安装了宝塔面板，我习惯用这个面板，其他方式安装webhook也没问题。</p>
+<p>宝塔面板安装webhook插件后，创建一个hook，添加下面的脚本，只需要修改git地址，其他的不用改。</p>
+<pre><code>#!/bin/bash
+echo &quot;&quot;
+#输出当前时间
+date --date='0 days ago' &quot;+%Y-%m-%d %H:%M:%S&quot;
+echo &quot;Start&quot;
+#判断宝塔WebHook参数是否存在
+if [ ! -n &quot;$1&quot; ]; then
+                echo &quot;param参数错误&quot;
+        echo &quot;End&quot;
+        exit
+fi
+#git项目路径
+gitPath=&quot;/www/wwwroot/$1&quot;
+#git 网址
+gitHttp=&quot;https://github.com/xxxxx.git&quot; #只需要修改成仓库的git地址，其他地方默认不修改
+
+echo &quot;Web站点路径：$gitPath&quot;
+
+#判断项目路径是否存在
+if [ -d &quot;$gitPath&quot; ]; then
+        cd $gitPath
+        #判断是否存在git目录
+        if [ ! -d &quot;.git&quot; ]; then
+                echo &quot;在该目录下克隆 git&quot;
+                sudo git clone $gitHttp gittemp
+                sudo mv gittemp/.git .
+                sudo rm -rf gittemp
+        fi
+        echo &quot;拉取最新的项目文件&quot;
+        sudo git reset --hard origin/master
+        sudo git pull        
+        echo &quot;设置目录权限&quot;
+        sudo chown -R www:www $gitPath
+        echo &quot;End&quot;
+        exit
+else
+        echo &quot;该项目路径不存在&quot;
+                echo &quot;新建项目目录&quot;
+        mkdir $gitPath
+        cd $gitPath
+        #判断是否存在git目录
+        if [ ! -d &quot;.git&quot; ]; then
+                echo &quot;在该目录下克隆 git&quot;
+                sudo git clone $gitHttp gittemp
+                sudo mv gittemp/.git .
+                sudo rm -rf gittemp
+        fi
+        echo &quot;拉取最新的项目文件&quot;
+        sudo git reset --hard origin/master
+        sudo git pull
+        echo &quot;设置目录权限&quot;
+        sudo chown -R www:www $gitPath
+        echo &quot;End&quot;
+        exit
+fi
+</code></pre>
+<p>保存后，点击查看密钥，如下：</p>
+<pre><code>宝塔WebHook使用方法:
+GET/POST:
+http://服务器ip:端口/hook?access_key=HOOK密钥&amp;param=aaa
+@param access_key string HOOK密钥
+@param param string 自定义参数（在hook脚本中使用$1接收）
+</code></pre>
+<p><mark>注意粘贴前把网址最后的aaa换成你的宝塔对应静态博客的网站的目录名</mark><br>
+例如我的网站路径 wwwroot/blog，就把<mark>aaa</mark>替换成<mark>blog</mark><br>
+如果不替换的话，会在你的服务器根目录创建一个aaa目录，你把站点目录修改为aaa目录，也可以。</p>
+<p>复制上面自动生成的链接，粘贴到Github的webhook设置<br>
+<img src="https://image.wocaonidaye.net/2020/03/544a24a32d1aa.png" alt="544a24a32d1aa" loading="lazy"></p>
+<p>内容类型选择<mark>json</mark>，secret就是webhook的一串密钥，复制过去粘贴，其他默认，保存提交。</p>
+<p>然后去Gridea提交更新博客，再看Webhook的日志，再检查目录下有没有文件就能看到是否同步成功了。</p>
+<p>当Github的版本库代码更新时，通过 git 的 webhook（git web 钩子）触发 push 事件。用户提交代码（git push）服务器的宝塔 webhook 插件拉取当前 git 最新代码（git pull）</p>
+<p>==注意：==阿里云国内服务器使用webhook拉取github仓库经常失败。</p>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              <article class="prev grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/notes.jpg');"></div>
+                 <a href="https://blog.caodan.io/dnspod-srv/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-03-15">2020-03-15</time>
+                  <h4 class="title white no-margin">Dnspod的SRV记录解析填写</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://blog.caodan.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/life.jpg');"></div>
+                 <a href="https://blog.caodan.io/wuhui/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-03-03">2020-03-03</time>
+                  <h4 class="title white no-margin">关于生活里的误会</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://blog.caodan.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <div class="clear"></div>
+<script>
+jQuery(document).ready(function($){
+    $('.vemoji-btn').text('😀');
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                clearInterval(checkExist);
+            }
+        }, 100);
+    }
+})
+</script>
+
+              </div>
+            
+
+            </div>
+          </div>
+      </main>
+
+          <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">近期更新</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <div class="info gradient-effect">                      
+                      <h4 class="title usmall">
+                        👉<a href="https://blog.caodan.io/maQoDORpm/">MacOS 安装 Homebrew 错误处理 Connection refused</a>
+                      </h4>
+                      <time datetime="2021-10-16">2021-10-16</time>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <div class="info gradient-effect">                      
+                      <h4 class="title usmall">
+                        👉<a href="https://blog.caodan.io/aria2/">Aria2 一键安装管理脚本</a>
+                      </h4>
+                      <time datetime="2020-05-21">2020-05-21</time>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <div class="info gradient-effect">                      
+                      <h4 class="title usmall">
+                        👉<a href="https://blog.caodan.io/sshlogin/">Oracle甲骨文服务器登陆</a>
+                      </h4>
+                      <time datetime="2020-05-19">2020-05-19</time>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="https://blog.caodan.io/notes/" class="ctag ctag-0 ctag-notes" aria-label="">笔记</a>
+                    
+                      <a href="https://blog.caodan.io/life/" class="ctag ctag-1 ctag-life" aria-label="">日常</a>
+                    
+                      <a href="https://blog.caodan.io/share/" class="ctag ctag-2 ctag-share" aria-label="">分享</a>
+                    
+                  </div>
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://blog.caodan.io/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">阿凯的生活记录</a></h4>
+                    <p class="founder">日拱一卒，对生活充满热爱！</p>
+                    <div class="social">
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="logo">
+          <a href="https://blog.caodan.io"><img src="/media/images/custom-footerLogo.png" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2015-2020 阿凯已发布 13 篇内容
+          <br/>
+          Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>&<a href="hhttps://i.immmmm.com/gridea-theme-breek/
+" target="_blank">「Breek」</a> <br/>
+<a href="https://console.upyun.com/register/?invite=Sysp9j948" target="_blank">
+<img src="https://image.wocaonidaye.net/upyun.png" width="60"> 
+<a href="https://url.cn/5ck0bM9" target="_blank">
+<img src="https://image.wocaonidaye.net/tencent.png" width="72"> 
+<a href="https://www.dynadot.com/?s838364TgI638t" target="_blank">
+<img src="https://image.wocaonidaye.net/dynadot.png" width="75">
+</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    
+    <div class="clear"></div>
+
+        
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/valine/1.3.10/Valine.Pure.min.js"></script>
+<script>
+    new Valine({
+        el: '#comments',
+        appId: 'eYJgmsa12SmmloRwPTSOb7S5-gzGzoHsz' ,
+        appKey: 'I7hmk5yRRBcjx9RYYb8g0Qf0',
+        pageSize: 30,
+        placeholder: '既然来了，那就留个痕迹啦~',
+        visitor: true // 阅读量统计
+    })
+</script>
+    
+
+      
+    <script src="https://blog.caodan.io/media/js/functions-post.js"></script>
+
+    </div>
+    <!-- end: #wrapper -->
+  </body>
+</html>

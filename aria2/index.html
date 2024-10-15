@@ -1,0 +1,404 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aria2 一键安装管理脚本 | 阿凯的生活记录</title>
+<meta name="description" content="日拱一卒，对生活充满热爱！" />
+<link rel="shortcut icon" href="https://blog.caodan.io/favicon.ico">
+<link rel="stylesheet" href="https://blog.caodan.io/styles/main.css">
+
+<script src="https://blog.caodan.io/media/js/jquery.min.js"></script>
+<script src="https://blog.caodan.io/media/js/masonry.pkgd.min.js"></script>
+<script src="https://blog.caodan.io/media/js/aos.js"></script>
+<script src="https://blog.caodan.io/media/js/pace.min.js"></script>
+<script src="https://blog.caodan.io/media/js/view-image.min.js"></script>
+<script src="https://blog.caodan.io/media/js/jquery.magnific-popup.min.js"></script>
+<script src="https://blog.caodan.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="Centos7下安装Aria2教程
+
+系统要求
+CentOS 7+ / Debian 6+ / Ubuntu 14.04 +
+推荐 Debian 7 x64，脚本在这个系统上面出错率最低。
+安装步骤
+执行下面的代码下载并运行脚本。
+wget..." />
+    <meta name="keywords" content="笔记" />
+    <script src="https://blog.caodan.io/media/js/waterfall.min.js"></script>
+    <script src="https://blog.caodan.io/media/js/prism.min.js"></script>
+  </head>
+  <body>
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
+        </div>
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="https://blog.caodan.io"><img src="/media/images/custom-headerLogo.png" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
+
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                <li class=""><a href="https://blog.caodan.io" class="menu">首页</a></li>
+                
+                  <li class="" >
+                    <a href="/life" class="menu">
+                      日常
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="https://photo.caodan.io/" class="menu">
+                      摄影
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/archives" class="menu">
+                      归档
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/friends" class="menu">
+                      友链
+                    </a>
+                  </li>
+                
+                <li class="search-menu-item hide-on-mobile hide-on-tablet"><a href="#search-lightbox" class="lightbox mfp-inline"><i class="fa fa-search-line"></i></a></li>
+              </ul>
+            </nav>
+            <a href="#search-lightbox" class="lightbox epcl-search-button mfp-inline hide-on-tablet hide-on-desktop"><i class="fa fa-search-line"></i></a>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
+        </div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
+      <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
+        <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
+          <div class="search-wrapper section">
+            <form id="gridea-search-form" data-update="1728968123968" action="/search/index.html" class="search-form" _lpchecked="1">
+              <input type="text" name="q" id="s" value="" class="search-field" placeholder="输入关键词搜索" aria-label="输入关键词搜索" required="">
+              <button type="submit" class="submit" aria-label="Submit">
+                <i class="fa fa-search-line"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('/media/images/custom-featureImage.png');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-05-21"><i class="fa fa-calendar"></i><span class="lately">4 年前</span></time>
+              
+              <a href="https://blog.caodan.io/aria2/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/aria2/"> </span>
+              </a>
+              <span id="/aria2/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://blog.caodan.io/notes/" class="ctag ctag-0 ctag-notes" aria-label="">笔记</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">Aria2 一键安装管理脚本</h1>
+            </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <p>Centos7下安装Aria2教程</p>
+<!-- more -->
+<p>系统要求<br>
+CentOS 7+ / Debian 6+ / Ubuntu 14.04 +</p>
+<p>推荐 Debian 7 x64，脚本在这个系统上面出错率最低。</p>
+<h1 id="安装步骤">安装步骤</h1>
+<p>执行下面的代码下载并运行脚本。<br>
+<code>wget -N --no-check-certificate https://softs.fun/Bash/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh</code></p>
+<h2 id="如果上面这个脚本无法下载尝试使用备用下载">如果上面这个脚本无法下载，尝试使用备用下载：</h2>
+<p><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh</code><br>
+运行脚本后会出现脚本操作菜单，选择并输入 1 就会开始安装。</p>
+<h1 id="使用说明">使用说明</h1>
+<p>进入下载脚本的目录并运行脚本：</p>
+<p><code>./aria2.sh</code><br>
+然后选择你要执行的选项即可。</p>
+<p>Aria2 一键安装管理脚本 [vx.x.x]<br>
+-- Toyo | doub.bid/shell-jc4 --</p>
+<ol start="0">
+<li>升级脚本<br>
+————————————</li>
+<li>安装 Aria2</li>
+<li>卸载 Aria2<br>
+————————————</li>
+<li>启动 Aria2</li>
+<li>停止 Aria2</li>
+<li>重启 Aria2<br>
+————————————</li>
+<li>修改 配置文件</li>
+<li>查看 日志信息<br>
+————————————</li>
+</ol>
+<p>当前状态: 已安装 并 已启动</p>
+<p>请输入数字 [0-7]:</p>
+<h1 id="其他操作">其他操作</h1>
+<p>启动：service aria2 start</p>
+<p>停止：service aria2 stop</p>
+<p>重启：service aria2 restart</p>
+<p>查看状态：service aria2 status</p>
+<p>配置文件：/root/.aria2/aria2.conf （配置文件包含中文注释，但是一些系统可能不支持显示中文）</p>
+<p>默认密匙：doub.bid</p>
+<p>下载目录：/usr/local/caddy/www/aria2/Download</p>
+<h1 id="提示-wget-command-not-found-的错误">提示 wget: command not found 的错误</h1>
+<p>这是系统精简的太干净了，wget都没有安装，所以需要安装wget。</p>
+<h3 id="centos系统">CentOS系统:</h3>
+<p>yum install -y wget</p>
+<h3 id="debianubuntu系统">Debian/Ubuntu系统:</h3>
+<p>apt-get install -y wget</p>
+<h1 id="升级脚本">升级脚本</h1>
+<p>升级脚本只需要运行脚本，然后选择并输入 0 回车即可，会自动检测最新版本并下载，当然重新下载脚本文件也可以，会自动覆盖原文件。</p>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              <article class="prev grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/notes.jpg');"></div>
+                 <a href="https://blog.caodan.io/maQoDORpm/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2021-10-16">2021-10-16</time>
+                  <h4 class="title white no-margin">MacOS 安装 Homebrew 错误处理 Connection refused</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://blog.caodan.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://blog.caodan.io/media/images/notes.jpg');"></div>
+                 <a href="https://blog.caodan.io/sshlogin/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-05-19">2020-05-19</time>
+                  <h4 class="title white no-margin">Oracle甲骨文服务器登陆</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://blog.caodan.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <div class="clear"></div>
+<script>
+jQuery(document).ready(function($){
+    $('.vemoji-btn').text('😀');
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                clearInterval(checkExist);
+            }
+        }, 100);
+    }
+})
+</script>
+
+              </div>
+            
+
+            </div>
+          </div>
+      </main>
+
+          <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">近期更新</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <div class="info gradient-effect">                      
+                      <h4 class="title usmall">
+                        👉<a href="https://blog.caodan.io/maQoDORpm/">MacOS 安装 Homebrew 错误处理 Connection refused</a>
+                      </h4>
+                      <time datetime="2021-10-16">2021-10-16</time>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <div class="info gradient-effect">                      
+                      <h4 class="title usmall">
+                        👉<a href="https://blog.caodan.io/aria2/">Aria2 一键安装管理脚本</a>
+                      </h4>
+                      <time datetime="2020-05-21">2020-05-21</time>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <div class="info gradient-effect">                      
+                      <h4 class="title usmall">
+                        👉<a href="https://blog.caodan.io/sshlogin/">Oracle甲骨文服务器登陆</a>
+                      </h4>
+                      <time datetime="2020-05-19">2020-05-19</time>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="https://blog.caodan.io/notes/" class="ctag ctag-0 ctag-notes" aria-label="">笔记</a>
+                    
+                      <a href="https://blog.caodan.io/life/" class="ctag ctag-1 ctag-life" aria-label="">日常</a>
+                    
+                      <a href="https://blog.caodan.io/share/" class="ctag ctag-2 ctag-share" aria-label="">分享</a>
+                    
+                  </div>
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://blog.caodan.io/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">阿凯的生活记录</a></h4>
+                    <p class="founder">日拱一卒，对生活充满热爱！</p>
+                    <div class="social">
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="logo">
+          <a href="https://blog.caodan.io"><img src="/media/images/custom-footerLogo.png" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2015-2020 阿凯已发布 13 篇内容
+          <br/>
+          Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>&<a href="hhttps://i.immmmm.com/gridea-theme-breek/
+" target="_blank">「Breek」</a> <br/>
+<a href="https://console.upyun.com/register/?invite=Sysp9j948" target="_blank">
+<img src="https://image.wocaonidaye.net/upyun.png" width="60"> 
+<a href="https://url.cn/5ck0bM9" target="_blank">
+<img src="https://image.wocaonidaye.net/tencent.png" width="72"> 
+<a href="https://www.dynadot.com/?s838364TgI638t" target="_blank">
+<img src="https://image.wocaonidaye.net/dynadot.png" width="75">
+</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    
+    <div class="clear"></div>
+
+        
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/valine/1.3.10/Valine.Pure.min.js"></script>
+<script>
+    new Valine({
+        el: '#comments',
+        appId: 'eYJgmsa12SmmloRwPTSOb7S5-gzGzoHsz' ,
+        appKey: 'I7hmk5yRRBcjx9RYYb8g0Qf0',
+        pageSize: 30,
+        placeholder: '既然来了，那就留个痕迹啦~',
+        visitor: true // 阅读量统计
+    })
+</script>
+    
+
+      
+    <script src="https://blog.caodan.io/media/js/functions-post.js"></script>
+
+    </div>
+    <!-- end: #wrapper -->
+  </body>
+</html>

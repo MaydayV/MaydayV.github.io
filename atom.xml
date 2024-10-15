@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.caodan.io</id>
+    <title>阿凯的生活记录</title>
+    <updated>2024-10-15T04:55:26.319Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.caodan.io"/>
+    <link rel="self" href="https://blog.caodan.io/atom.xml"/>
+    <subtitle>日拱一卒，对生活充满热爱！</subtitle>
+    <logo>https://blog.caodan.io/images/avatar.png</logo>
+    <icon>https://blog.caodan.io/favicon.ico</icon>
+    <rights>All rights reserved 2024, 阿凯的生活记录</rights>
+    <entry>
+        <title type="html"><![CDATA[MacOS 安装 Homebrew 错误处理 Connection refused]]></title>
+        <id>https://blog.caodan.io/maQoDORpm/</id>
+        <link href="https://blog.caodan.io/maQoDORpm/">
+        </link>
+        <updated>2021-10-15T19:15:56.000Z</updated>
+        <summary type="html"><![CDATA[<p>使用国内源安装</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>使用国内源安装</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aria2 一键安装管理脚本]]></title>
+        <id>https://blog.caodan.io/aria2/</id>
+        <link href="https://blog.caodan.io/aria2/">
+        </link>
+        <updated>2020-05-21T02:45:06.000Z</updated>
+        <summary type="html"><![CDATA[<p>Centos7下安装Aria2教程</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Centos7下安装Aria2教程</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Oracle甲骨文服务器登陆]]></title>
+        <id>https://blog.caodan.io/sshlogin/</id>
+        <link href="https://blog.caodan.io/sshlogin/">
+        </link>
+        <updated>2020-05-19T10:21:08.000Z</updated>
+        <summary type="html"><![CDATA[<p>记录一些常用命令</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>记录一些常用命令</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ssh-keygen 公钥格式]]></title>
+        <id>https://blog.caodan.io/sshgeshi/</id>
+        <link href="https://blog.caodan.io/sshgeshi/">
+        </link>
+        <updated>2020-05-19T10:05:08.000Z</updated>
+        <summary type="html"><![CDATA[<p>公钥：公钥有2种格式，标准格式和one-line格式</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>公钥：公钥有2种格式，标准格式和one-line格式</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Snapic Plus主题收获记录]]></title>
+        <id>https://blog.caodan.io/SnapicPlus/</id>
+        <link href="https://blog.caodan.io/SnapicPlus/">
+        </link>
+        <updated>2020-03-25T07:59:09.000Z</updated>
+        <summary type="html"><![CDATA[<p>终于寻找到一个符合自己审美的照片主题，感谢Lopwon。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>终于寻找到一个符合自己审美的照片主题，感谢Lopwon。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[OneDrive指定账户扩容命令]]></title>
+        <id>https://blog.caodan.io/onedrivepowershell/</id>
+        <link href="https://blog.caodan.io/onedrivepowershell/">
+        </link>
+        <updated>2020-03-18T08:40:41.000Z</updated>
+        <summary type="html"><![CDATA[<p>OneDrive扩容步骤以及命令，适用于获得扩容权限的账户。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>OneDrive扩容步骤以及命令，适用于获得扩容权限的账户。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Dnspod的SRV记录解析填写]]></title>
+        <id>https://blog.caodan.io/dnspod-srv/</id>
+        <link href="https://blog.caodan.io/dnspod-srv/">
+        </link>
+        <updated>2020-03-15T11:05:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>在使用微软服务的时候，需要验证域，其中有项是srv记录</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在使用微软服务的时候，需要验证域，其中有项是srv记录</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[webhook实时拉取Github仓库]]></title>
+        <id>https://blog.caodan.io/webhook-github/</id>
+        <link href="https://blog.caodan.io/webhook-github/">
+        </link>
+        <updated>2020-03-13T06:51:42.000Z</updated>
+        <summary type="html"><![CDATA[<p>博客域名没有备案，而自己有香港的服务器，可以用来同步Github仓库的静态文件。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>博客域名没有备案，而自己有香港的服务器，可以用来同步Github仓库的静态文件。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于生活里的误会]]></title>
+        <id>https://blog.caodan.io/wuhui/</id>
+        <link href="https://blog.caodan.io/wuhui/">
+        </link>
+        <updated>2020-03-03T11:39:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>每个人都喜欢用自己的方式去判断别人，去猜测一些没有发生的事情，这很<mark>操蛋</mark>。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>每个人都喜欢用自己的方式去判断别人，去猜测一些没有发生的事情，这很<mark>操蛋</mark>。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[清除Linux连接ssh密钥方法]]></title>
+        <id>https://blog.caodan.io/ssh-keygen/</id>
+        <link href="https://blog.caodan.io/ssh-keygen/">
+        </link>
+        <updated>2019-08-16T13:06:17.000Z</updated>
+        <summary type="html"><![CDATA[<p>在Mac的终端使用 ssh root@ip 登录远程Linux服务器</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在Mac的终端使用 ssh root@ip 登录远程Linux服务器</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://blog.caodan.io/hello-gridea/</id>
+        <link href="https://blog.caodan.io/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>✍️  <strong>Gridea</strong> 一个静态博客写作客户端。用它来记录生活、心情、知识、笔记、创意...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>✍️  <strong>Gridea</strong> 一个静态博客写作客户端。用它来记录生活、心情、知识、笔记、创意...</p>
+]]></content>
+    </entry>
+</feed>
